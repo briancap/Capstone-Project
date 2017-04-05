@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 
 public class NewReflectionFragment extends Fragment {
 
-    @Override public View onCreateView(LayoutInflater layoutInflater, ViewGroup container, Bundle savedInstanceState){
-        View rootView;
+    @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        View rootView = inflater.inflate(R.layout.fragment_new_reflection, container, false);
 
         return rootView;
     }

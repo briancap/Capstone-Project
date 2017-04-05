@@ -16,7 +16,7 @@ public class ReflectionListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container
             , Bundle savedInstanceState){
 
-        View rootView = inflater.inflate(R.layout., container, false);
+        View rootView = inflater.inflate(R.layout.fragment_reflection_list, container, false);
 
         return rootView;
     }
