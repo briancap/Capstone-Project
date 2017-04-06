@@ -1,4 +1,4 @@
-package com.example.brian.reflection.DataStructure;
+package com.example.brian.reflection.dataStructure;
 
 import android.os.AsyncTask;
 

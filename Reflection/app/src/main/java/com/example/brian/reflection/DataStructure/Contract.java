@@ -1,4 +1,4 @@
-package com.example.brian.reflection.DataStructure;
+package com.example.brian.reflection.dataStructure;
 
 import android.content.ContentResolver;
 import android.content.ContentUris;
@@ -60,10 +60,6 @@ public class Contract {
         public static Uri buildPromptURI(long promptId){
             return ContentUris.withAppendedId(PROMPT_URI, promptId);
         }
-    }
+    } //END OF PROMPT TABLE
 
-
-
-
-
-}
+}//END OF CONTRACT
