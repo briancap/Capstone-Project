@@ -2,7 +2,9 @@ package com.example.brian.reflection.dataStructure;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
+import android.content.UriMatcher;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,14 +14,36 @@ import android.support.annotation.Nullable;
  */
 
 public class Provider extends ContentProvider {
+
+    private static final UriMatcher uriMatcher = matchUri();
+    private Database mReflectionDb;
+    private static final SQLiteQueryBuilder mQueryBuilder = new SQLiteQueryBuilder();
+
+    static final int REFLECTION = 100;
+
     @Override
     public boolean onCreate() {
+        mReflectionDb = new Database(getContext());
         return false;
     }
 
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
+        String tableName;
+        Cursor cursor;
+
+
+        cursor = mReflectionDb.getReadableDatabase().query(
+                Contract.TABLE_REFLECTION
+                , projection
+                , selection
+                , selectionArgs
+                , null
+                , null
+                , sortOrder
+        );
+
         return null;
     }
 
@@ -43,5 +67,10 @@ public class Provider extends ContentProvider {
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
         return 0;
+    }
+
+    static UriMatcher matchUri(){
+
+        return null;
     }
 }
