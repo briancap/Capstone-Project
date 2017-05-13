@@ -25,6 +25,11 @@ public class Contract {
         public static final String COLUMN_RESPONSE      = "response";
         public static final String COLUMN_ADDED_DATE    = "added_date";
 
+        public static final int INDEX_REFLECTION_ID     = 0;
+        public static final int INDEX_PROMPT_ID         = 1;
+        public static final int INDEX_RESPONSE          = 2;
+        public static final int INDEX_ADDED_DATE        = 3;
+
         public static final Uri REFLECTION_URI = BASE_URI.buildUpon().appendPath(TABLE_REFLECTION).build();
 
         public static final String DIR_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE
