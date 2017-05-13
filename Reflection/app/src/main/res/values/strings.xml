@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Reflection</string>
+
+
+    <!--Prompts and Settings-->
+    <string name="prompts_and_settings">Prompts and Settings</string>
+
+
+
+
 </resources>
