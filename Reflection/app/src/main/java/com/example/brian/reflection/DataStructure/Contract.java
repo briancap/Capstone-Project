@@ -18,6 +18,7 @@ public class Contract {
 
     //inner class for reflections table
     public static final class ReflectionTable implements BaseColumns{
+        public static final Uri CONTENT_URI = BASE_URI.buildUpon().appendPath(TABLE_REFLECTION).build();
 
         public static final String COLUMN_REFLECTION_ID = "_id";
         public static final String COLUMN_PROMPT_ID     = "prompt_id";
@@ -34,13 +35,11 @@ public class Contract {
                 + "/" + AUTHORITY
                 + "/" + TABLE_REFLECTION;
 
-        //builds the URI for a specific movie id
-        public static Uri buildReflectionURI(long reflectionId){
-            return ContentUris.withAppendedId(REFLECTION_URI, reflectionId);
-        }
     } //END OF REFLECTION TABLE
 
     public static final class PromptTable implements BaseColumns {
+        public static final Uri CONTENT_URI = BASE_URI.buildUpon().appendPath(TABLE_PROMPT).build();
+
         public static final String COLUMN_PROMPT_ID         = "_id";
         public static final String COLUMN_PROMPT            = "prompt";
         public static final String COLUMN_CATEGORY_COLOR    = "color";
