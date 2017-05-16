@@ -3,11 +3,14 @@ package com.example.brian.reflection;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.content.res.ConfigurationHelper;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,25 +20,38 @@ import com.example.brian.reflection.dataStructure.Contract;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Brian on 4/4/2017.
- */
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+
 
 public class ReflectionListFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>{
-
+    RefletionListAdapter adapter;
     private Uri mUri;
     static Map<Integer, Map<String, Object>> allReflections = new HashMap<>();
     private static final int DETAIL_LOADER = 0;
+
+    @BindView(R.id.recycler_view)
+    RecyclerView recyclerView;
+    @BindView(R.id.fab)
+    FloatingActionButton fab;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container
             , Bundle savedInstanceState){
-
         View rootView = inflater.inflate(R.layout.fragment_reflection_list, container, false);
 
+        ButterKnife.bind(getActivity());
+        adapter = new RefletionListAdapter();
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+
         return rootView;
-    }
+    } //EO-OC
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
