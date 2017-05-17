@@ -17,6 +17,22 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".NewReflectionActivity"
+            android:label="@string/new_reflection"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.brian.reflection.NewReflectionActivity" />
+        </activity>
+
+        <activity android:name=".ViewReflectionActivity"
+            android:label="@string/view_reflection"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.brian.reflection.NewReflectionActivity" />
+        </activity>
+
         <activity android:name=".PromptsAndSettingsActivity"
             android:label="@string/prompts_and_settings"
             android:parentActivityName=".MainActivity">

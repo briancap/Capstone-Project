@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Reflection</string>
 
+    <!--NewReflectionsActivity-->
+    <string name="new_reflection">New Reflection</string>
+
+    <!--ViewReflection-->
+    <string name="view_reflection">View Reflection</string>
 
     <!--Prompts and Settings-->
     <string name="prompts_and_settings">Prompts and Settings</string>

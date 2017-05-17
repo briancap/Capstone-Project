@@ -6,9 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Brian on 4/4/2017.
- */
+
 
 public class NewReflectionFragment extends Fragment {
 

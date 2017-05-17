@@ -14,8 +14,10 @@ import android.view.MenuItem;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentManager fm = getSupportFragmentManager();
-        fm.beginTransaction().add(R.id.container_reflection_list, new ReflectionListFragment()).commit();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.container_reflection_list, new ReflectionListFragment())
+                .commit();
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
