@@ -33,6 +33,7 @@ public class ReflectionListFragment extends Fragment implements LoaderManager.Lo
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
+
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
@@ -41,8 +42,8 @@ public class ReflectionListFragment extends Fragment implements LoaderManager.Lo
     public View onCreateView(LayoutInflater inflater, ViewGroup container
             , Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.fragment_reflection_list, container, false);
+        ButterKnife.bind(this, rootView);
 
-        ButterKnife.bind(getActivity());
         adapter = new RefletionListAdapter();
 
         recyclerView.setAdapter(adapter);
